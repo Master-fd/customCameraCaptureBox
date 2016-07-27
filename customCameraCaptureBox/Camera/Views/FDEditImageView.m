@@ -17,6 +17,9 @@
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIView *editView;
 
+@property (nonatomic, strong) UIView *topBar;
+@property (nonatomic, strong) UIView *bottomBar;
+
 @end
 @implementation FDEditImageView
 
@@ -25,8 +28,6 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        
-        NSLog(@"编辑图片");
         
         __weak typeof(self) _weakSelf = self;
         
@@ -38,44 +39,45 @@
         }];
         
         //上工具bar
-        
-        UIView *topBar = [[UIView alloc] init];
-        [self addSubview:topBar];
-        topBar.backgroundColor = [UIColor blackColor];
-        [topBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        self.topBar = [[UIView alloc] init];
+        [self addSubview:self.topBar];
+        self.topBar.backgroundColor = [UIColor blackColor];
+        [self.topBar mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.and.leading.trailing.equalTo(_weakSelf);
-            make.height.equalTo(@50);
+            make.height.mas_equalTo(_weakSelf.topHeight);
         }];
         
         //下工具bar
-        UIView *bottomBar = [[UIView alloc] init];
-        [self addSubview:bottomBar];
-        bottomBar.backgroundColor = [UIColor blackColor];
-        [bottomBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        self.bottomBar = [[UIView alloc] init];
+        [self addSubview:self.bottomBar];
+        self.bottomBar.backgroundColor = [UIColor blackColor];
+        [self.bottomBar mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.and.leading.and.trailing.equalTo(_weakSelf);
-            make.height.equalTo(@50);
+            make.height.mas_equalTo(_weakSelf.bottomHeight);
         }];
         
         //取消
         UIButton *cancelBtn = [[UIButton alloc] init];
-        [bottomBar addSubview:cancelBtn];
-        cancelBtn.backgroundColor = [UIColor orangeColor];
-        [cancelBtn setTitle:@"确定" forState:UIControlStateNormal];
-        [cancelBtn addTarget:self action:@selector(confirmBtnDidClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.bottomBar addSubview:cancelBtn];
+        [cancelBtn setTitle:@"返回" forState:UIControlStateNormal];
+        [cancelBtn addTarget:self action:@selector(cancelBtnDidClick:) forControlEvents:UIControlEventTouchUpInside];
         [cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.and.right.and.bottom.equalTo(bottomBar);
-            make.width.equalTo(@50);
+            make.top.equalTo(_weakSelf.bottomBar).offset(10);
+            make.bottom.equalTo(_weakSelf.bottomBar).offset(-10);
+            make.leading.mas_equalTo(10);
+            make.width.mas_equalTo(55);
         }];
         
         //确定
         UIButton *confirmBtn = [[UIButton alloc] init];
-        [bottomBar addSubview:confirmBtn];
-        confirmBtn.backgroundColor = [UIColor orangeColor];
-        [confirmBtn setTitle:@"返回" forState:UIControlStateNormal];
-        [confirmBtn addTarget:self action:@selector(cancelBtnDidClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.bottomBar addSubview:confirmBtn];
+        [confirmBtn setTitle:@"确定" forState:UIControlStateNormal];
+        [confirmBtn addTarget:self action:@selector(confirmBtnDidClick:) forControlEvents:UIControlEventTouchUpInside];
         [confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.and.leading.and.bottom.equalTo(bottomBar);
-            make.width.equalTo(@50);
+            make.top.equalTo(_weakSelf.bottomBar).offset(10);
+            make.bottom.equalTo(_weakSelf.bottomBar).offset(-10);
+            make.trailing.mas_equalTo(-10);
+            make.width.mas_equalTo(@55);
         }];
         
         //中间选择框
@@ -84,10 +86,11 @@
         self.editView.backgroundColor = [UIColor clearColor];
         [self addSubview:self.editView];
         [self.editView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(topBar.mas_bottom);
+            make.top.equalTo(_weakSelf.topBar.mas_bottom);
             make.leading.and.trailing.equalTo(_weakSelf);
-            make.bottom.equalTo(bottomBar.mas_top);
+            make.bottom.equalTo(_weakSelf.bottomBar.mas_top);
         }];
+        
         
     }
     
@@ -122,6 +125,21 @@
     self.imageView.image = photoImage;
 }
 
+- (void)setTopHeight:(CGFloat)topHeight
+{
+    _topHeight = topHeight;
+    [self.topBar mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(topHeight);
+    }];
+}
 
+- (void)setBottomHeight:(CGFloat)bottomHeight
+{
+    _bottomHeight = bottomHeight;
+    [self.bottomBar mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(bottomHeight);
+    }];
+    
+}
 
 @end

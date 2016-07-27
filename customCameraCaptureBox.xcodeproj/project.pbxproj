@@ -14,9 +14,11 @@
 		1B0C68351D31EE9200B8C5E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0C68341D31EE9200B8C5E8 /* Images.xcassets */; };
 		1B0C68381D31EE9200B8C5E8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B0C68361D31EE9200B8C5E8 /* LaunchScreen.xib */; };
 		1B0C68441D31EE9200B8C5E8 /* customCameraCaptureBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C68431D31EE9200B8C5E8 /* customCameraCaptureBoxTests.m */; };
-		1B8E3D151D32540B00C31962 /* FDCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E3D131D32540B00C31962 /* FDCameraViewController.m */; };
-		1B8E3D1B1D3254FC00C31962 /* FDEditImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E3D1A1D3254FC00C31962 /* FDEditImageView.m */; };
-		1B8E3D1E1D3255D100C31962 /* UIImage+cutImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8E3D1D1D3255D100C31962 /* UIImage+cutImage.m */; };
+		1BFB1C851D49003A0068E89B /* FDCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB1C7C1D49003A0068E89B /* FDCameraViewController.m */; };
+		1BFB1C861D49003A0068E89B /* FDEditImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB1C801D49003A0068E89B /* FDEditImageView.m */; };
+		1BFB1C871D49003A0068E89B /* UIImage+cutImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB1C841D49003A0068E89B /* UIImage+cutImage.m */; };
+		1BFB1C8A1D49059F0068E89B /* FDTopBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB1C891D49059F0068E89B /* FDTopBarView.m */; };
+		1BFB1C8D1D49081F0068E89B /* FDBottomBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB1C8C1D49081F0068E89B /* FDBottomBarView.m */; };
 		65BF65C7788696F0D04E6494 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C932F17AD6F6091D82E530 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -45,12 +47,16 @@
 		1B0C683D1D31EE9200B8C5E8 /* customCameraCaptureBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = customCameraCaptureBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B0C68421D31EE9200B8C5E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B0C68431D31EE9200B8C5E8 /* customCameraCaptureBoxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = customCameraCaptureBoxTests.m; sourceTree = "<group>"; };
-		1B0C684D1D31EF7700B8C5E8 /* FDCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDCameraViewController.h; sourceTree = "<group>"; };
-		1B8E3D131D32540B00C31962 /* FDCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDCameraViewController.m; sourceTree = "<group>"; };
-		1B8E3D191D3254FC00C31962 /* FDEditImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDEditImageView.h; sourceTree = "<group>"; };
-		1B8E3D1A1D3254FC00C31962 /* FDEditImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDEditImageView.m; sourceTree = "<group>"; };
-		1B8E3D1C1D3255D100C31962 /* UIImage+cutImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+cutImage.h"; sourceTree = "<group>"; };
-		1B8E3D1D1D3255D100C31962 /* UIImage+cutImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+cutImage.m"; sourceTree = "<group>"; };
+		1BFB1C7B1D49003A0068E89B /* FDCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDCameraViewController.h; sourceTree = "<group>"; };
+		1BFB1C7C1D49003A0068E89B /* FDCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDCameraViewController.m; sourceTree = "<group>"; };
+		1BFB1C7F1D49003A0068E89B /* FDEditImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDEditImageView.h; sourceTree = "<group>"; };
+		1BFB1C801D49003A0068E89B /* FDEditImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDEditImageView.m; sourceTree = "<group>"; };
+		1BFB1C831D49003A0068E89B /* UIImage+cutImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+cutImage.h"; sourceTree = "<group>"; };
+		1BFB1C841D49003A0068E89B /* UIImage+cutImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+cutImage.m"; sourceTree = "<group>"; };
+		1BFB1C881D49059F0068E89B /* FDTopBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDTopBarView.h; sourceTree = "<group>"; };
+		1BFB1C891D49059F0068E89B /* FDTopBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDTopBarView.m; sourceTree = "<group>"; };
+		1BFB1C8B1D49081F0068E89B /* FDBottomBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDBottomBarView.h; sourceTree = "<group>"; };
+		1BFB1C8C1D49081F0068E89B /* FDBottomBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDBottomBarView.m; sourceTree = "<group>"; };
 		45C932F17AD6F6091D82E530 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB6CDC6421F6AB80351FED6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,13 +120,9 @@
 		1B0C68261D31EE9200B8C5E8 /* customCameraCaptureBox */ = {
 			isa = PBXGroup;
 			children = (
-				1B8E3D1C1D3255D100C31962 /* UIImage+cutImage.h */,
-				1B8E3D1D1D3255D100C31962 /* UIImage+cutImage.m */,
-				1B8E3D191D3254FC00C31962 /* FDEditImageView.h */,
-				1B8E3D1A1D3254FC00C31962 /* FDEditImageView.m */,
+				1BFB1C791D49003A0068E89B /* Camera */,
+				1BFB1C811D49003A0068E89B /* Common */,
 				1B0C682B1D31EE9200B8C5E8 /* AppDelegate.h */,
-				1B0C684D1D31EF7700B8C5E8 /* FDCameraViewController.h */,
-				1B8E3D131D32540B00C31962 /* FDCameraViewController.m */,
 				1B0C682C1D31EE9200B8C5E8 /* AppDelegate.m */,
 				1B0C682E1D31EE9200B8C5E8 /* ViewController.h */,
 				1B0C682F1D31EE9200B8C5E8 /* ViewController.m */,
@@ -156,6 +158,54 @@
 				1B0C68421D31EE9200B8C5E8 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1BFB1C791D49003A0068E89B /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				1BFB1C7A1D49003A0068E89B /* Controllers */,
+				1BFB1C7E1D49003A0068E89B /* Views */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		1BFB1C7A1D49003A0068E89B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1BFB1C7B1D49003A0068E89B /* FDCameraViewController.h */,
+				1BFB1C7C1D49003A0068E89B /* FDCameraViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1BFB1C7E1D49003A0068E89B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1BFB1C7F1D49003A0068E89B /* FDEditImageView.h */,
+				1BFB1C801D49003A0068E89B /* FDEditImageView.m */,
+				1BFB1C881D49059F0068E89B /* FDTopBarView.h */,
+				1BFB1C891D49059F0068E89B /* FDTopBarView.m */,
+				1BFB1C8B1D49081F0068E89B /* FDBottomBarView.h */,
+				1BFB1C8C1D49081F0068E89B /* FDBottomBarView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1BFB1C811D49003A0068E89B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1BFB1C821D49003A0068E89B /* Extension */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1BFB1C821D49003A0068E89B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1BFB1C831D49003A0068E89B /* UIImage+cutImage.h */,
+				1BFB1C841D49003A0068E89B /* UIImage+cutImage.m */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,11 +361,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B0C68301D31EE9200B8C5E8 /* ViewController.m in Sources */,
+				1BFB1C851D49003A0068E89B /* FDCameraViewController.m in Sources */,
+				1BFB1C871D49003A0068E89B /* UIImage+cutImage.m in Sources */,
+				1BFB1C8D1D49081F0068E89B /* FDBottomBarView.m in Sources */,
+				1BFB1C861D49003A0068E89B /* FDEditImageView.m in Sources */,
+				1BFB1C8A1D49059F0068E89B /* FDTopBarView.m in Sources */,
 				1B0C682D1D31EE9200B8C5E8 /* AppDelegate.m in Sources */,
-				1B8E3D1E1D3255D100C31962 /* UIImage+cutImage.m in Sources */,
 				1B0C682A1D31EE9200B8C5E8 /* main.m in Sources */,
-				1B8E3D1B1D3254FC00C31962 /* FDEditImageView.m in Sources */,
-				1B8E3D151D32540B00C31962 /* FDCameraViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

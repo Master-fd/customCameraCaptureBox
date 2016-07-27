@@ -12,6 +12,8 @@
 #import "UIImage+cutImage.h"
 
 
+#define kTopBarHeight    44
+#define kBottomBarHeight  85
 
 @interface ViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -45,7 +47,8 @@
     self.editView = [[FDEditImageView alloc] initWithFrame:rect];
     [self.view addSubview:self.editView];
     self.editView.hidden = YES;
-
+    self.editView.topHeight = kTopBarHeight;
+    self.editView.bottomHeight = kBottomBarHeight;
 }
 
 
@@ -61,6 +64,8 @@
 
     
     self.cameraViewController = [[FDCameraViewController alloc] init];
+    self.cameraViewController.topHeight = kTopBarHeight;
+    self.cameraViewController.bottomHeight = kBottomBarHeight;
     imagePickerController.cameraOverlayView = self.cameraViewController.view;
     self.cameraViewController.pickerController = imagePickerController;
     [self presentViewController:imagePickerController animated:YES completion:nil];
@@ -89,11 +94,11 @@
     self.editView.photoImage = [UIImage reSizeImage:image toSize:[UIScreen mainScreen].bounds.size];  //先从定义大小，在赋值
     self.editView.editImageCancelBlock = ^{
         _weakSelf.editView.hidden = YES;
-        [_weakSelf btnDidClick];
+        [_weakSelf btnDidClick];  //返回按钮，继续拍照
     };
     self.editView.editImageEndBlock = ^(UIImage *image){
         _weakSelf.editView.hidden = YES;
-        _weakSelf.imageView.image = image;
+        _weakSelf.imageView.image = image; //图片编辑完之后回调
     };
     
     [self dismissViewControllerAnimated:YES completion:nil];

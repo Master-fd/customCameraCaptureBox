@@ -13,5 +13,7 @@
 
 @property (nonatomic, strong) UIImagePickerController *pickerController;
 
+@property (nonatomic, assign) CGFloat topHeight;
+@property (nonatomic, assign) CGFloat bottomHeight;
 
 @end

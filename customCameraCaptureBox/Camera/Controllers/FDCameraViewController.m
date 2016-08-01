@@ -41,6 +41,7 @@
     };
     [topBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.and.leading.and.trailing.equalTo(_weakSelf.view);
+        make.height.mas_equalTo(_weakSelf.topHeight);
     }];
     self.topBar = topBar;
     
@@ -57,6 +58,7 @@
     };
     [bottomBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.and.leading.and.trailing.equalTo(_weakSelf.view);
+        make.height.mas_equalTo(_weakSelf.bottomHeight);
     }];
     self.bottomBar = bottomBar;
     
@@ -76,12 +78,16 @@
 - (void)setTopHeight:(CGFloat)topHeight
 {
     _topHeight = topHeight;
-    self.topBar.height = topHeight;
+    [self.topBar mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(topHeight);
+    }];
 }
 - (void)setBottomHeight:(CGFloat)bottomHeight
 {
     _bottomHeight = bottomHeight;
-    self.bottomBar.height = bottomHeight;
+    [self.bottomBar mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(bottomHeight);
+    }];
 }
 //拍摄照片
 

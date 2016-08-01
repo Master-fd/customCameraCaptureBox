@@ -100,10 +100,10 @@
 - (void)confirmBtnDidClick:(UIButton *)btn
 {
     //将图片截成矩形图片
-    CGFloat height = [UIScreen mainScreen].bounds.size.height - 100;
+    CGFloat height = [UIScreen mainScreen].bounds.size.height - self.topHeight- self.bottomHeight;
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
     CGFloat x = 0;
-    CGFloat y = (self.imageView.image.size.height - height)/2;
+    CGFloat y = self.topHeight;
     UIImage *image = [UIImage clipImageWithImage:self.imageView.image inRect:CGRectMake(x, y, width, height)];
     if (self.editImageEndBlock) {
         self.editImageEndBlock(image);

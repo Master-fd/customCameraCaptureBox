@@ -11,7 +11,10 @@
 #import "FDEditImageView.h"
 #import "UIImage+cutImage.h"
 
-
+/**
+ *  只支持ios7，ios8 iphone5s发现有问题, showsCameraControls设置成no时，会导致相机不是全屏的
+ *
+ */
 #define kTopBarHeight    44
 #define kBottomBarHeight  85
 
@@ -55,27 +58,24 @@
 - (void)btnDidClick
 {
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-    
+
     imagePickerController.delegate = self;
     imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
     imagePickerController.showsCameraControls = NO;
     imagePickerController.navigationBarHidden = YES;
     imagePickerController.allowsEditing = NO;
-
+    imagePickerController.cameraFlashMode = UIImagePickerControllerCameraFlashModeOff;
     
     self.cameraViewController = [[FDCameraViewController alloc] init];
     self.cameraViewController.topHeight = kTopBarHeight;
     self.cameraViewController.bottomHeight = kBottomBarHeight;
     imagePickerController.cameraOverlayView = self.cameraViewController.view;
+
     self.cameraViewController.pickerController = imagePickerController;
     [self presentViewController:imagePickerController animated:YES completion:nil];
     
     
-
-    
 }
-
-
 
 
 
@@ -84,14 +84,15 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
    
-    UIImage* image = [info valueForKey:UIImagePickerControllerOriginalImage];
-
+    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
     __weak typeof(self) _weakSelf = self;
     
     //编辑图片
-    NSLog(@"在这里可以添加一个编辑图片的控制器或者view  %@", info);
+//    FDLog(@"在这里可以添加一个编辑图片的控制器或者view  %@", info);
+   
     self.editView.hidden = NO;
-    self.editView.photoImage = [UIImage reSizeImage:image toSize:[UIScreen mainScreen].bounds.size];  //先从定义大小，在赋值
+    image = [UIImage reSizeImage:image toSize:[UIScreen mainScreen].bounds.size];  //先从定义大小，在赋值
+    self.editView.photoImage = image;
     self.editView.editImageCancelBlock = ^{
         _weakSelf.editView.hidden = YES;
         [_weakSelf btnDidClick];  //返回按钮，继续拍照

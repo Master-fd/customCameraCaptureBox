@@ -15,12 +15,14 @@
 
 + (UIImage *)reSizeImage:(UIImage *)image toSize:(CGSize)reSize
 {
+    FDLog(@"%@", NSStringFromCGSize(reSize));
+   
     UIGraphicsBeginImageContext(CGSizeMake(reSize.width, reSize.height));
     [image drawInRect:CGRectMake(0, 0, reSize.width, reSize.height)];
     UIImage *reSizeImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    NSLog(@"%@", NSStringFromCGSize(reSizeImage.size));
+    
     return reSizeImage;
 }
 
@@ -41,7 +43,7 @@
    
     UIGraphicsEndImageContext();
 
-    NSLog(@"%@", NSStringFromCGSize(clipImage.size));
+    FDLog(@"%@", NSStringFromCGSize(clipImage.size));
     return clipImage;
     
 }
